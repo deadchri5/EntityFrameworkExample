@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace efejemplo.Models;
 
@@ -15,6 +16,7 @@ public class Category
 
     public string ?Description { get; set; }
 
+    [JsonIgnore]
     public virtual ICollection<Task> Tasks { get; set; }
 
 }

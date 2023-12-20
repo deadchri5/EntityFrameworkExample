@@ -19,4 +19,10 @@ app.MapGet("/dbConnection", async ([FromServices] TasksContext dbContext) => {
     return Results.Ok("Base de datos en memoria " + dbContext.Database.IsInMemory());
 });
 
+app.MapGet("/api/getTasks", async ([FromServices] TasksContext dbContext) => {
+    // return Results.Ok(dbContext.Tasks.Where(p => p.TaskProperty == efejemplo.Models.Properties.LOW));
+    var tasks = await dbContext.Tasks.Include(p => p.Category).ToListAsync();
+    return Results.Ok(tasks);
+});
+
 app.Run();
