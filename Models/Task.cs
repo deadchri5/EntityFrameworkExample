@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace efejemplo.Models;
 
@@ -25,6 +26,7 @@ public class Task
     public virtual Category Category { get; set; }
 
     // [NotMapped]
+    [JsonIgnore]
     public string Resumen { get; set; }
 
 }
