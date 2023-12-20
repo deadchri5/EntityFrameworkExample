@@ -5,15 +5,15 @@ namespace efejemplo.Models;
 
 public class Task 
 {
-    [Key]
-    public Guid Id { get; set; }
+    // [Key]
+    public Guid TaskId { get; set; }
 
-    [Required]
-    [ForeignKey("CategoryId")]
+    // [Required]
+    // [ForeignKey("CategoryId")]
     public Guid CategoryId { get; set; }
 
-    [Required]
-    [MaxLength(200)]
+    // [Required]
+    // [MaxLength(200)]
     public string Title { get; set; }
 
     public string ?Description { get; set; }
@@ -24,7 +24,7 @@ public class Task
 
     public virtual Category Category { get; set; }
 
-    [NotMapped]
+    // [NotMapped]
     public string Resumen { get; set; }
 
 }

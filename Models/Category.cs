@@ -4,11 +4,11 @@ namespace efejemplo.Models;
 
 public class Category
 {
-    [Key]
+    // [Key]
     public Guid CategoryId { get; set; }
 
-    [Required(ErrorMessage = "Name is required")]
-    [MaxLength(150)]
+    // [Required(ErrorMessage = "Name is required")]
+    // [MaxLength(150)]
     public string ?Name { get; set; }
 
     public string ?Description { get; set; }
